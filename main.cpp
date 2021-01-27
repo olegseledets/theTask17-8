@@ -3,7 +3,7 @@
 void showSlice(int arr[][5][10], int slice){
   for(int i = 0; i < 5; ++i){
     for(int j = 0; j < 5; ++j){
-      (arr[i][j][slice+1] == 1) ? (std::cout << "1\t") : (std::cout << "0\t");
+      (arr[i][j][slice] == 1) ? (std::cout << "1\t") : (std::cout << "0\t");
     }
     std::cout << std::endl;
   }
@@ -24,12 +24,11 @@ void fillArr(int arr[][5][10]){
   }
 }
 
-
 int main() {
   int landscape[5][5][10] = {0};
   int slice = 0;
   fillArr(landscape);
-  std::cout << "Введите срез: ";
+  std::cout << "Введите уровень среза: ";
   std::cin >> slice;
   showSlice(landscape, slice);
 }

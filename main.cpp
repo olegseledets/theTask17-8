@@ -3,7 +3,7 @@
 void showSlice(int arr[][5][10], int slice){
   for(int i = 0; i < 5; ++i){
     for(int j = 0; j < 5; ++j){
-      (arr[i][j][slice] == 1) ? (std::cout << "1\t") : (std::cout << "0\t");
+      std::cout << (arr[i][j][slice] == 1 ) << '\t';
     }
     std::cout << std::endl;
   }
@@ -24,8 +24,16 @@ void fillArr(int arr[][5][10]){
   }
 }
 
+void zeroArray(int arr[5][5][10]) {
+  for(int i = 0; i < 5; ++i)
+    for(int j = 0; j < 5; ++j)
+      for(int k = 0; k < 10; ++k)
+        arr[i][j][k] = 0;
+}
+
 int main() {
-  int landscape[5][5][10] = {0};
+  int landscape[5][5][10];
+  zeroArray(landscape);
   int slice = 0;
   fillArr(landscape);
   std::cout << "Введите уровень среза: ";
